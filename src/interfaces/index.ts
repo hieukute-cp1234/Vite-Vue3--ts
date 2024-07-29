@@ -10,3 +10,10 @@ export interface IDataItem {
   value: number;
   text: string;
 }
+
+export interface ISelectItemProps {
+  isLastItem?: boolean;
+  valueItemInGroup: number[];
+  disabled?: boolean;
+  option?: IOption | {};
+}

@@ -48,7 +48,7 @@ const mapOptionsByKey = computed(() => {
 });
 
 const currentValue = computed(() => {
-  const currentOption = options.value.find(
+  const currentOption = options.value?.find(
     (item) => dataOption?.value?.value === item.value,
   );
   if (keySearch.value) return keySearch.value;
@@ -56,7 +56,7 @@ const currentValue = computed(() => {
 });
 
 const handleChangeOption = (option: IOption) => {
-  if (validate.value.includes(option.value)) return;
+  if (validate.value?.includes(option?.value)) return;
   isShowListItem.value = false;
   emits("change", option);
 };
@@ -69,7 +69,7 @@ const handleToggleList = (e: any) => {
 };
 
 const handleChange = (e: any) => {
-  const value = e.target.value;
+  const value = e?.target?.value;
   if (value === "") {
     keySearch.value = "";
   }
@@ -96,7 +96,7 @@ const handleChange = (e: any) => {
       src="../../assets/icons/arrow-up.svg"
     />
     <div
-      v-if="isShowListItem && mapOptionsByKey.length"
+      v-if="isShowListItem && mapOptionsByKey?.length"
       class="autocomplete__list"
     >
       <div
@@ -104,7 +104,7 @@ const handleChange = (e: any) => {
         :key="index"
         :class="[
           'autocomplete__list__option',
-          { disable: validate.includes(option.value) },
+          { disable: validate?.includes(option.value) },
         ]"
         option="option-item"
         @click="handleChangeOption(option)"
