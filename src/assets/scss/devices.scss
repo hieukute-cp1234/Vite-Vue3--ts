@@ -1,0 +1,11 @@
+$responsive-large-phones: 576px;
+$responsive-tablets: 768px;
+$responsive-small-desktops: 992px;
+$responsive-default-desktops: 1200px;
+$responsive-large-desktops: 1400px;
+
+$large-phones: "(min-width: #{$responsive-large-phones}) ";
+$tablets: "(min-width: #{$responsive-tablets}) ";
+$small-desktops: "(min-width: #{$responsive-small-desktops}) ";
+$default-desktops: "(min-width: #{$responsive-default-desktops}) ";
+$large-desktops: "(min-width: #{$responsive-large-desktops}) ";
