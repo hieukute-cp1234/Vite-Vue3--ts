@@ -8,7 +8,6 @@ import { IOption, IDataItem } from "../interfaces";
 
 interface IGroupItemProps {
   position: { first: boolean; last: boolean };
-  text: String;
   selections: IDataItem[];
 }
 
@@ -76,8 +75,8 @@ const handleCancelModal = () => {
   isShowModalConfirm.value = false;
 };
 
-const handleChangeOption = (selection: any, option: IOption) => {
-  if (option.value === 0) return;
+const handleChangeOption = (selection: IDataItem, option: IOption) => {
+  if (option?.value === 0) return;
   emits("change:selections", selection, option);
 };
 </script>
@@ -86,7 +85,7 @@ const handleChangeOption = (selection: any, option: IOption) => {
   <div class="group-item">
     <div class="group-item__move">
       <ButtonCommon
-        v-if="!position.first"
+        v-if="!position?.first"
         :isIcon="true"
         @click="(e) => handleMoveGroup(e, MOVE_TYPES.UP)"
       >
@@ -95,7 +94,7 @@ const handleChangeOption = (selection: any, option: IOption) => {
         </template>
       </ButtonCommon>
       <ButtonCommon
-        v-if="!position.last"
+        v-if="!position?.last"
         :isIcon="true"
         @click="(e) => handleMoveGroup(e, MOVE_TYPES.DOWN)"
       >

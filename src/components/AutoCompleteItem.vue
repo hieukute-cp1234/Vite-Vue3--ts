@@ -2,15 +2,8 @@
 import { ref } from "vue";
 import Autocomplete from "./common/AutoComplete.vue";
 import ButtonCommon from "./common/Button.vue";
-import { IOption, IDataItem } from "../interfaces";
+import { IOption, IDataItem, ISelectItemProps } from "../interfaces";
 import { dataOption } from "../constants";
-
-interface ISelectItemProps {
-  isLastItem?: boolean;
-  valueItemInGroup: number[];
-  disabled?: boolean;
-  option?: any;
-}
 
 interface ISelectItemEmits {
   (e: "addItem", data: IDataItem | null): void;

@@ -96,7 +96,6 @@ const handleMoveDownGroup = (index: number) => {
           <GroupItem
             v-for="(group, index) in sortListGroup"
             :selections="group.selections"
-            :text="group.name"
             :key="index"
             :position="{
               first: index === 0,
